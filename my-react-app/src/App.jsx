@@ -6,7 +6,7 @@ export default function App() {
       <Button text="Test Secondary" variant="secondary" />
       <Button text="Primary Enabled" type="button" />
       <Button
-        text="Primary Disabled"
+        text="Secondary Disabled"
         type="button"
         variant="secondary"
         disabled={true}
