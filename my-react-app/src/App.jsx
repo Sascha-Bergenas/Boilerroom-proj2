@@ -1,15 +1,6 @@
-import Input from "/src/components/ui/Input.jsx";
+import Input from "./components/ui/input";
 import Button from "./components/ui/Button";
 import Card from "./components/ui/Card";
-
-// const App = () => {
-//   return (
-//     <div>
-
-//     </div>
-//   );
-// };
-// export default App;
 
 //Använd export default för att exportera en komponent från en fil
 
