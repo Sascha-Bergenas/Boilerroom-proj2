@@ -5,8 +5,8 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <h1>Zoan</h1>
-        <ul>
+        <h1 className="text-lg">Zoan</h1>
+        <ul className="text-md">
           <li>
             <Link to="/">Dashboard</Link>
           </li>

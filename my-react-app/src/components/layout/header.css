@@ -2,8 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  padding: 0 6rem;
+  padding: 2rem 5rem;
 }
 
 nav h1 {
@@ -25,6 +24,8 @@ nav li {
   nav {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    background-color: var(--primary-light-color);
   }
   nav ul {
     flex-direction: column;
