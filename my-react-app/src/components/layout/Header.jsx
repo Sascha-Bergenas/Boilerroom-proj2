@@ -5,6 +5,7 @@ export default function Header() {
     <header>
       <Link to="/">Dashboard</Link>
       <Link to="/dashboard">Dashboard</Link>
+      <Link to="/history">Historik</Link>
     </header>
   );
 }

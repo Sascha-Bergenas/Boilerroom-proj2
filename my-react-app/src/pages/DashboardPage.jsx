@@ -7,9 +7,7 @@ function Dashboard() {
       <Header></Header>
       <BaseCard>
         <p>Testar</p>
-        <h1>bing
-          
-        </h1>
+        <h1>bing</h1>
       </BaseCard>
     </>
   );
