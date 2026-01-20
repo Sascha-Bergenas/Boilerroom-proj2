@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import History from "./pages/HistoryPage";
-import Dashboard from "./pages/Dashboard/DashboardPage";
+import Dashboard from "./pages/dashboard/DashboardPage";
 import Header from "./components/layout/Header";
 
 //Använd export default för att exportera en komponent från en fil
