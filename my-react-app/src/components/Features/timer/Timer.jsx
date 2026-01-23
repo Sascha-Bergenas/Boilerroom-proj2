@@ -1,7 +1,8 @@
 import useTimerLogic from "./timerLogic";
 
 export default function Timer() {
-  const { time, startTimer, pauseTimer, stopTimer } = useTimerLogic();
+  const { time, startTimer, pauseTimer, stopTimer, isRunning, hasStarted } =
+    useTimerLogic();
 
   function calcTime(time) {
     const minutes = Math.floor(time / 60);
@@ -16,9 +17,15 @@ export default function Timer() {
   return (
     <>
       <p>{calcTime(time)}</p>
-      <button onClick={startTimer}>Start</button>
-      <button onClick={pauseTimer}>Pause</button>
-      <button onClick={stopTimer}>Stop</button>
+      <button onClick={startTimer} disabled={isRunning}>
+        Start
+      </button>
+      <button onClick={pauseTimer} disabled={!isRunning}>
+        Pause
+      </button>
+      <button onClick={stopTimer} disabled={!hasStarted}>
+        Stop
+      </button>
     </>
   );
 }
