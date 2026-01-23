@@ -1,15 +1,16 @@
-import BaseCard from "../../components/ui/Card";
+import BaseCard from "../../components/ui/cards/Card";
 import styles from "./Dashboard.module.css";
 import WorkSessionForm from "../../components/ui/form/WorkSessionForm";
+import Topbar from "../../components/layout/Topbar";
 
 function Dashboard() {
   return (
     <>
-      {" "}
+      <Topbar></Topbar>
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <BaseCard className={styles.timer} size="card-timer">
-            <h3>CARD TIMER</h3>
+            <p>CARD TIMER</p>
           </BaseCard>
 
           <BaseCard className={styles.card1} size="card-large">
