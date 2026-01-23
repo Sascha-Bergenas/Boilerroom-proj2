@@ -22,6 +22,7 @@ export default function useTimerLogic() {
   function stopTimer() {
     setIsRunning(false);
     setTime(0);
+    elapsedRef.current = 0;
     setHasStarted(false);
     console.log("Stop:", new Date(Date.now()).toLocaleString());
   }
@@ -30,8 +31,8 @@ export default function useTimerLogic() {
     if (!isRunning) return;
 
     const interval = setInterval(() => {
-      setTime(Math.floor((Date.now() - startTimeRef.current) / 1000));
-    }, 1000);
+      setTime(Date.now() - startTimeRef.current);
+    }, 10);
 
     return () => clearInterval(interval);
   }, [isRunning]);

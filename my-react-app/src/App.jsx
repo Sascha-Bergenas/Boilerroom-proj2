@@ -12,7 +12,6 @@ export default function App() {
   return (
     <>
       <Header />
-      <Timer />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
