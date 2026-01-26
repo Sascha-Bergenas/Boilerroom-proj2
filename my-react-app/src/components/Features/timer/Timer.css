@@ -55,7 +55,33 @@
 
 .time-text {
   color: white;
-  font-size: clamp(28px, 6vw, 46px);
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+@media (max-width: 650px) {
+  .ring {
+    background: none;
+    padding: 0;
+    filter: none;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .ticks {
+    display: none;
+  }
+
+  .ring-inner {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+  }
+
+  .time-text {
+    font-size: 3rem;
+    color: var(--black-color);
+  }
 }
