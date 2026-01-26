@@ -3,12 +3,25 @@
 
 import useTimerLogic from "./timerLogic";
 import Button from "../../ui/Button";
+import SessionModal from "../sessionModal/sessionModal";
 import "./Timer.css";
+import { useRef } from "react";
 
 export default function Timer() {
   //get timer state and control functions from custom hook
   const { time, startTimer, pauseTimer, stopTimer, isRunning, hasStarted } =
     useTimerLogic();
+
+  const dialogRef = useRef(null);
+
+  const handleStopClick = () => {
+    stopTimer();
+    dialogRef.current.showModal();
+  };
+
+  const handleCloseModal = () => {
+    dialogRef.current.close();
+  };
 
   //Converts ms to formatted time values to display on page
   function calcTime(time) {
@@ -64,8 +77,12 @@ export default function Timer() {
           text="Pause"
           variant="secondary"
         />
+        <SessionModal
+          dialogRef={dialogRef}
+          handleCloseModal={handleCloseModal}
+        />
         <Button
-          onClick={stopTimer}
+          onClick={handleStopClick}
           disabled={!hasStarted}
           text="Stop"
           variant="primary"
