@@ -12,25 +12,19 @@ export default function Timer() {
 
   //Converts ms to formatted time values to display on page
   function calcTime(time) {
-    const minutes = Math.floor(time / 60000);
+    const hours = Math.floor(time / 3600000);
+    const minutes = Math.floor((time % 3600000) / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
-    const hundredths = Math.floor((time % 1000) / 10);
-
-    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
-    const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
-    const formattedHundredths = hundredths < 10 ? "0" + hundredths : hundredths;
 
     return {
-      formattedMinutes: minutes < 10 ? "0" + minutes : String(minutes),
-      formattedSeconds: seconds < 10 ? "0" + seconds : String(seconds),
-      formattedHundredths:
-        hundredths < 10 ? "0" + hundredths : String(hundredths),
+      formattedHours: hours.toString().padStart(2, "0"),
+      formattedMinutes: minutes.toString().padStart(2, "0"),
+      formattedSeconds: seconds.toString().padStart(2, "0"),
     };
   }
 
   //format current time value for rendering
-  const { formattedMinutes, formattedSeconds, formattedHundredths } =
-    calcTime(time);
+  const { formattedHours, formattedMinutes, formattedSeconds } = calcTime(time);
 
   return (
     <div className="timer-fill">
@@ -40,10 +34,7 @@ export default function Timer() {
           <div className="ticks" />
           <div className="ring-inner">
             <div className="time-text">
-              {formattedMinutes}:{formattedSeconds}
-              <span className="milliseconds text-md">
-                :{formattedHundredths}
-              </span>
+              {formattedHours}:{formattedMinutes}:{formattedSeconds}
             </div>
           </div>
         </div>
